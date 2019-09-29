@@ -24,7 +24,7 @@ sudo apt-get install mysql-server mysql-client
 sudo apt-get install apache2
 sudo apt-get install supervisor
 ```
-# PREPARING THE CODE
+# PREPARING APACHE AND SUPERVISOR
 
 Create in /etc/supervisor/conf.d/ a File web.conf with this program:
 
