@@ -5,7 +5,7 @@ In my case the run dll is Site.dll and my folders are webSite and Site, you can 
 
 Install on Linux Ubuntu 18.04 - x64
 
-*INSTALLING LIBRARIES
+INSTALLING LIBRARIES
 
 Open a terminal and run the following commands (remember is important you location in /):
 
@@ -24,7 +24,7 @@ sudo apt-get install mysql-server mysql-client
 sudo apt-get install apache2
 sudo apt-get install supervisor
 
-*PREPARING THE CODE
+PREPARING THE CODE
 
 Create in /etc/supervisor/conf.d/ a File web.conf
 
@@ -45,7 +45,6 @@ stopsignal=INT
 Open /etc/apache2/sites-available/000-default.conf and replace all for
 
 <VirtualHost *:80>
-
 	ServerAdmin webmaster@localhost
 	# DocumentRoot /var/www/html
 
@@ -58,12 +57,11 @@ Open /etc/apache2/sites-available/000-default.conf and replace all for
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
-
 </VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
-*COMPILING THE CODE
+COMPILING THE CODE
 
 Upload de Site where you want, i advise in /
 
