@@ -68,3 +68,7 @@ dotnet publish -c release -o ../webSite
 cd ../webSite
 sudo service supervisor restart
 ```
+
+# CONFIGURING THE PAGE
+
+In DBController.cs and appsetting.json search  server=IP; database=account; Uid=account; pwd=password; and edit for your data.
