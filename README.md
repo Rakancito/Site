@@ -4,10 +4,19 @@ ASP.NET Core Web Site
 In my case the run dll is Site.dll and my folders are webSite and Site, you can change the names on your project.
 
 Install on Linux Ubuntu 18.04 - x64
-
-********************************** 1 *****************************************
+.
+.
+.
+.
+.
+.
 ***************************INSTALLING LIBRARIES*******************************
 
+.
+.
+.
+.
+.
 Open a terminal and run the following commands (remember is important you location in /):
 
 cd / 
@@ -25,7 +34,6 @@ sudo apt-get install mysql-server mysql-client
 sudo apt-get install apache2
 sudo apt-get install supervisor
 
-********************************** 2 *****************************************
 ***************************PREPARING THE CODE*********************************
 
 Create in /etc/supervisor/conf.d/ a File web.conf
@@ -65,8 +73,6 @@ Open /etc/apache2/sites-available/000-default.conf and replace all for
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
-
-********************************** 3 *****************************************
 ***************************COMPILING THE CODE*********************************
 Upload de Site where you want, i advise in /
 
