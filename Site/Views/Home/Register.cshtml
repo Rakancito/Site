@@ -1,0 +1,70 @@
+﻿@model Site.Models.UserViewModel;
+@{
+    ViewData["Title"] = "Registro";
+}
+@if (TempData["TempLogin"] == null)
+{
+    <div class="content">
+        <div class="div-ent"></div>
+        <div class="register-user">
+            <div class="wrapInput">
+                <h1 class="text-white-illumination">Crear una cuenta</h1>
+                @if (TempData["Succees"] != null)
+                {
+                    <p class="alert alert-success">@TempData["Succees"]</p>
+                }
+                @if (TempData["FailRegister"] != null)
+                {
+                    <p class="alert alert-danger">@TempData["FailRegister"]</p>
+                }
+                @if (TempData["FailForm"] != null)
+                {
+                    <p class="alert alert-danger">@TempData["FailForm"]</p>
+                }
+                <form asp-route="/User/Register" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="Account"></label>
+                        <input asp-for="Account" class="form-control" />
+                        <span asp-validation-for="Account" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="RemoveCode"></label>
+                        <input asp-for="RemoveCode" class="form-control" />
+                        <span asp-validation-for="RemoveCode" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn wrapButton text-white">Registrarse</button>
+                </form>
+            </div>
+        </div>
+        <div class="div-ent"></div>
+    </div>
+}
+else
+{
+    <div class="content">
+        <div class="div-ent"></div>
+        <div class="register-user">
+            <div class="wrapInput">
+                <h1 class="text-white-illumination">Lo siento, ahora te encuentras conectado en una cuenta.</h1>
+                
+            </div>
+        </div>
+        <div class="div-ent"></div>
+    </div>
+}

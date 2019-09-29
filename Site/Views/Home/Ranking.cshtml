@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Ranking";
+}
+
+    <div class="div-ent"></div>
+    <div class="text-center">
+        <h1 class="display-4 text-white">Información sobre el servidor</h1>
+        <div class="btn">
+            <a class="text-white">Registrarse</a>
+        </div>
+        <div class="btn">
+            <a class="text-white">Ver Updates</a>
+        </div>
+        <div class="btn">
+            <a class="text-white">Términos y Condiciones</a>
+        </div>
+    </div>
+    <div class="div-ent"></div>
+    <div class="section-body-information-ranking">
+        <table class="tablecontainer">
+            <thead>
+                <tr>
+                    <th><h1>Pos</h1></th>
+                    <th><h1>Jugador</h1></th>
+                    <th><h1>Raza</h1></th>
+                    <th><h1>Nivel</h1></th>
+                    <th><h1>Experiencia</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{  int i = 0; }
+                @foreach (var players in Model)
+                {
+                    i++;
+                    <tr>
+                        <td>@i</td>
+                        <td>@players.sName</td>
+                        <td>@players.iJob</td>
+                        <td>@players.iLevel</td>
+                        <td>@players.iExp</td>
+                    </tr>
+                }    
+            </tbody>
+        </table>
+    </div>
+

@@ -1,0 +1,66 @@
+﻿@model Site.Models.AccountViewModel;
+
+@if (TempData["TempLogin"] != null)
+{
+    <div class="logincontent">
+        <div class="div-ent"></div>
+        <h1 class="subTittle">My Account: @TempData["TempLogin"]</h1>
+
+        <div class="subNav">
+            <a href="">AJUSTES</a>
+            <a href="">HISTORIAL</a>
+            <a href="">CÓDIGOS</a>
+            <a href="" class="ncoin">@TempData["Coins"] Coins</a>
+        </div>
+    </div>
+    <div class="div-ent"></div>
+    <div class="logincontent">
+        <h2 class="text-info-area">Información de Cuenta</h2>
+        <span class="text-info-area2">Email: </span><strong class="text-info-result">@TempData["Email"]</strong><br />
+        <span class="text-info-area2">Cuenta: </span><strong class="text-info-result">@TempData["TempLogin"]</strong><br />
+        <span class="text-info-area2">Código de Borrado: </span><strong class="text-info-result">@TempData["RemoveCode"]</strong><br />
+        <span class="text-info-area2">Password: </span><strong class="text-info-result">CHANGE</strong><br />
+        <div class="wrap-change">
+            @if (TempData["Succees"] != null)
+            { 
+                <p class="alert alert-success">@TempData["Succees"]</p>
+            }
+            @if (TempData["FailRegister"] != null)
+            { 
+                <p class="alert alert-alert">@TempData["FailRegister"]</p>
+            }
+            @if (TempData["FailForm"] != null)
+            { 
+                <p class="alert alert-alert">@TempData["FailForm"]</p>
+            }
+            <form asp-action="Index" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="text-white" asp-for="Account"></label>
+                    <input asp-for="Account" class="form-control" />
+                    <span asp-validation-for="Account" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="text-white" asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="text-white" asp-for="ConfirmPassword"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn wrapButton text-white">Cambiar</button>
+            </form>
+        </div>
+    </div>
+    <div class="div-ent"></div>
+}
+else
+{
+    <div class="content">
+        <div class="div-ent"></div>
+        <h1 class="text-white">Necesitas conectarte para ver esta sección.</h1>
+    </div>
+}
+

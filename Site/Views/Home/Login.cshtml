@@ -1,0 +1,50 @@
+﻿@model Site.Models.UserViewModel;
+@{
+    ViewData["Title"] = "Autentificación";
+}
+
+@if (TempData["TempLogin"] == null)
+{
+    <div class="content">
+        <div class="div-ent"></div>
+        <div class="register-user">
+            <div class="wrapInput">
+                <h1 class="text-white-illumination">Conectar a Cuenta</h1>
+
+                @if (TempData["UserLoginFailed"] != null)
+                {
+                    <p class="alert alert-danger">@TempData["UserLoginFailed"]</p>
+                }
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="Account"></label>
+                        <input asp-for="Account" class="form-control" />
+                        <span asp-validation-for="Account" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white" asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn wrapButton text-white">Conectarse</button>
+                </form>
+            </div>
+        </div>
+        <div class="div-ent"></div>
+    </div>
+}
+else
+{
+    <div class="content">
+        <div class="div-ent"></div>
+        <div class="register-user">
+            <div class="wrapInput">
+                <h1 class="text-white-illumination">Conectar a Cuenta</h1>
+
+                <div class="text-white">Lo siento, no puedes conectar otra cuenta</div>
+            </div>
+        </div>
+        <div class="div-ent"></div>
+    </div>
+}
