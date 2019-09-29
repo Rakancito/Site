@@ -39,7 +39,6 @@ environment=ASPNETCORE_ENVIRONMENT=Production
 user=www-data
 stopsignal=INT
 
-
 - Open /etc/apache2/sites-available/000-default.conf and replace all for
 
 <VirtualHost *:80>
